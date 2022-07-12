@@ -60,5 +60,3 @@ jobs:
 
       - name: Run output tests
         run: mix test
-        env:
-          OUTPUT_TESTS: true
