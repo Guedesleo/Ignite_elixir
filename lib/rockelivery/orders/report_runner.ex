@@ -7,7 +7,7 @@ defmodule Rockelivery.Orders.ReportRunner do
 
   #CLIENT
 
-  def start_lin(_initial_stack)  do
+  def start_link(_initial_stack)  do
     GenServer.start_link(__MODULE__, %{})
   end
 
