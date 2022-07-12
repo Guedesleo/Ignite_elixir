@@ -37,25 +37,25 @@ jobs:
       - name: Restore dependencies cache
         uses: actions/cache@v3
         with:
-          path: deps
-          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-          restore-keys: ${{ runner.os }}-mix-
-          
-      - name: Check formatting
-        run: mix format --check-formatted
-
-      - name: Run Credo
-        run: mix credo --strict
-
-    - name: Check coverage
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Check Formatting
+      run: mix format --check-formatted
+    - name : Run Credo
+      run: mix credo --strict
+    - name : Check coverage
       run: mix coveralls.json
       env:
         MIX_ENV: test
-
-    - name: Upload coverage to CodeCov
+    - name : Run codecov script
       run: bash <(curl -s https://codecov.io/bash)
       env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN}}
+    - name: Run tests
+      run: mix test
 
       - name: Install dependencies
         run: mix deps.get
