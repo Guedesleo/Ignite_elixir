@@ -1,8 +1,6 @@
 defmodule Rockelivery.ViaCep.ClientTest do
   use ExUnit.Case, async: true
-
   alias Plug.Conn
-
   alias Rockelivery.Error
   alias Rockelivery.ViaCep.Client
 
