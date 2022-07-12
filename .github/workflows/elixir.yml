@@ -51,6 +51,11 @@ jobs:
       env:
         MIX_ENV: test
 
+    - name: Upload coverage to CodeCov
+      run: $ProgressPreference = 'SilentlyContinue' Invoke-WebRequest -Uri https://uploader.codecov.io/latest/windows/codecov.exe -Outfile codecov.exe .\codecov.exe
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Install dependencies
         run: mix deps.get
       - name: Run tests
