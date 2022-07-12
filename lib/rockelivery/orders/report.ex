@@ -41,7 +41,7 @@ defmodule Rockelivery.Orders.Report do
 
   defp parse_line(%Order{user_id: user_id, payment_method: payment_method, items: items}) do
     items_string = Enum.map(items, &item_string/1)
-    total_price = TotalPrice.calculate(items)
+    total_price = TotalPrice.calculate_total_price(items)
 
     "#{user_id},#{payment_method},#{items_string}#{total_price}\n"
   end
