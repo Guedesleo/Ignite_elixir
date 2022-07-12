@@ -1,12 +1,26 @@
 defmodule Rockelivery.ViaCep.Client do
-  use Tesla
+  @moduledoc """
+  The entrypoint for defining your web interface, such
+  as controllers, views, channels and so on.
 
+  This can be used in your application as:
+
+      use RockeliveryWeb, :controller
+      use RockeliveryWeb, :view
+
+  The definitions below will be executed for every view,
+  controller, etc, so keep them short and clean, focused
+  on imports, uses and aliases.
+
+  Do NOT define functions inside the quoted expressions
+  below. Instead, define any helper function in modules
+  and import those modules here.
+  """
+  use Tesla
   alias Rockelivery.Error
   alias Rockelivery.ViaCep.Behaviour
   alias Tesla.Env
-
   @behaviour Behaviour
-
   @base_url "https://viacep.com.br/ws/"
   plug(Tesla.Middleware.JSON)
 

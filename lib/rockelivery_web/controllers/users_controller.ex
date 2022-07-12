@@ -2,10 +2,9 @@ defmodule RockeliveryWeb.UsersController do
   use RockeliveryWeb, :controller
 
   alias Rockelivery.User
-  alias RockeliveryWeb.FallbackController
   alias RockeliveryWeb.Auth.Guardian
 
-  action_fallback(FallbackController)
+  action_fallback(RockeliveryWeb.FallbackController)
 
   def create(conn, params) do
     with {:ok, %User{} = user} <- Rockelivery.create_user(params),
