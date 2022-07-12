@@ -59,7 +59,7 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Run tests
-      run: mix test
+      run: mix.bat test
 
       - name: Install dependencies
         run: mix deps.get
