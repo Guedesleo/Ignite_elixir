@@ -44,15 +44,5 @@ jobs:
       - name: Check formatting
         run: mix format --check-formatted
 
-      - name: Check coverage
-        run: mix coveralls.json
-        env:
-          MIX_ENV: test
-
-      - name: Upload coverage to CodeCov
-        run: bash <(curl -s https://codecov.io/bash)
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
       - name: Run tests
         run: mix test
