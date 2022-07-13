@@ -1,5 +1,4 @@
-name: Elixir CI
-
+name: Elixir
 on:
   push:
     branches: [main]
@@ -57,5 +56,6 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash)
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      - name: Run output tests
+
+      - name: Run tests
         run: mix test
