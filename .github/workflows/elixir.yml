@@ -46,6 +46,3 @@ jobs:
 
       - name: Run Credo
         run: mix credo --strict
-
-      - name: Run tests
-        run: mix test
