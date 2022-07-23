@@ -8,7 +8,7 @@ import Config
 config :rockelivery, Rockelivery.Repo,
   username: "postgres",
   password: "lgr140795$",
-  database: "rockelivery_dev#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "rockelivery_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
