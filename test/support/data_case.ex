@@ -13,7 +13,6 @@ defmodule Rockelivery.DataCase do
   by setting `use Rockelivery.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
-
   use ExUnit.CaseTemplate
   alias Ecto.Adapters.SQL.Sandbox
 

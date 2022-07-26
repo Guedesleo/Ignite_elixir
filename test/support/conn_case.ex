@@ -14,7 +14,6 @@ defmodule RockeliveryWeb.ConnCase do
   by setting `use RockeliveryWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
-
   use ExUnit.CaseTemplate
   alias Ecto.Adapters.SQL.Sandbox
 

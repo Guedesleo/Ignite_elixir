@@ -16,7 +16,6 @@ defmodule RockeliveryWeb do
   below. Instead, define any helper function in modules
   and import those modules here.
   """
-
   def controller do
     quote do
       use Phoenix.Controller, namespace: RockeliveryWeb
