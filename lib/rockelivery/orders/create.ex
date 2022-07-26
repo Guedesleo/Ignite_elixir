@@ -19,6 +19,7 @@ defmodule Rockelivery.Orders.Create do
   alias Rockelivery.Orders.ValidateAndMultiplyItems
 
   def call(%{"items" => items_params} = params) do
+    IO.inspect("teste")
     items_ids = Enum.map(items_params, fn item -> item["id"] end)
 
     items_ids
