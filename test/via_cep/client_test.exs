@@ -38,6 +38,7 @@ defmodule Rockelivery.ViaCep.ClientTest do
       end)
 
       response = Client.get_cep_info(url, cep)
+      IO.inspect(response)
 
       expected_response =
         {:ok,
