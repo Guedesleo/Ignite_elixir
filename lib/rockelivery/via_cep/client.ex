@@ -8,7 +8,7 @@ defmodule Rockelivery.ViaCep.Client do
 
   @base_url "https://viacep.com.br/ws/"
 
-  plug Tesla.Middleware.JSON
+  plug(Tesla.Middleware.JSON)
 
   def get_client do
     :rockelivery
@@ -23,7 +23,7 @@ defmodule Rockelivery.ViaCep.Client do
   end
 
   defp handle_get({:ok, %Env{status: 200, body: %{"erro" => true}}}) do
-    {:error, Error.build_not_found("CEP not found")}
+    {:error, Error.build(:not_found, "CEP not found!")}
   end
 
   defp handle_get({:ok, %Env{status: 200, body: body}}) do
@@ -31,10 +31,10 @@ defmodule Rockelivery.ViaCep.Client do
   end
 
   defp handle_get({:ok, %Env{status: 400, body: _body}}) do
-    {:error, Error.build_bad_request("Invalid CEP")}
+    {:error, Error.build(:bad_request, "Invalid CEP!")}
   end
 
   defp handle_get({:error, reason}) do
-    {:error, Error.build_bad_request(reason)}
+    {:error, Error.build(:bad_request, reason)}
   end
 end
