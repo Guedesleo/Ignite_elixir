@@ -78,8 +78,7 @@ jobs:
 
           - uses: mhanberg/gigalixir-action@<current release>
             with:
-              APP_SUBFOLDER: my-app-subfolder  # Add only if you want to deploy an app that is not at the root of your repository
-              GIGALIXIR_APP: my-gigalixir-app # Feel free to also put this in your secrets
+              GIGALIXIR_APP: mild-giddy-narwhale 
               GIGALIXIR_CLEAN: true # defaults to false
               GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
               GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
