@@ -60,9 +60,10 @@ jobs:
       - name: Run tests
         run: mix test
 
-        deploy:
-          needs: build # Will only run if the test job succeeds
-          if: github.ref == 'refs/heads/main' # Only run this job if it is on the main branch
+      deploy:
+        name: Deploy
+        needs: build # Will only run if the test job succeeds
+        if: github.ref == 'refs/heads/main' # Only run this job if it is on the main branch
 
         runs-on: ubuntu-latest
 
