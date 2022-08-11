@@ -78,8 +78,7 @@ jobs:
 
           - uses: mhanberg/gigalixir-action@<current release>
             with:
-              GIGALIXIR_APP: mild-giddy-narwhale 
-              GIGALIXIR_CLEAN: true # defaults to false
+              GIGALIXIR_APP: mild-giddy-narwhale
               GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
               GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
               MIGRATIONS: false  # defaults to true
